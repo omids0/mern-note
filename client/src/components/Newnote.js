@@ -1,8 +1,23 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addNewNoteAction } from "../redux/actions/notesActions";
 
 export default function Newnote() {
   const [title, settitle] = useState("");
   const [body, setbody] = useState("");
+  const dispatch = useDispatch();
+
+  const saveNote = () => {
+    const note = {
+      title,
+      body,
+    };
+    if (body) {
+      dispatch(addNewNoteAction(note));
+    } else {
+      alert("Body is empty");
+    }
+  };
 
   return (
     <div className="newnote">
@@ -29,11 +44,11 @@ export default function Newnote() {
         </label>
         <div className="form-group-btn">
           <div>
-            <button className='btn remove-btn'>Remove</button>
+            <button className="btn remove-btn">Remove</button>
           </div>
           <div>
-            <button className='btn save-btn'>Save</button>
-            <button className='btn cancel-btn'>Cancel</button>
+            <button className="btn save-btn" onClick={saveNote}>Save</button>
+            <button className="btn cancel-btn">Cancel</button>
           </div>
         </div>
       </form>

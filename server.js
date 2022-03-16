@@ -1,23 +1,14 @@
 const express = require("express");
 const db = require("./db");
 const Note = require("./models/noteModel")
+const notesRout = require("./routes/notesRoute")
 const app = express();
 
 app.use(express.json());
+app.use('/api/notes/', notesRout)
 
 app.get("/", (req, res) => {
   res.send("Server is up!");
-});
-
-app.get("/getnotes", (req, res) => {
-  Note.find({}, (error, result) => {
-    try {
-      res.send(result);
-    } catch (error) {
-      console.log(error);
-      throw new Error(error);
-    }
-  });
 });
 
 const port = process.env.PORT || 5000;
