@@ -26,7 +26,7 @@ export default function Homepage() {
           <div className="note" key={note._id}>
             <div className="note-header">
               <Link className="note-link" to={`/edit/${note._id}`}>
-                <h2>{note.title}</h2>
+                <h2 className='note-title'>{note.title}</h2>
               </Link>
               <button
                 className="remove_x"
