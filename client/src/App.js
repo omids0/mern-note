@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Regester from "./components/Regester";
 import Navbar from "./components/Navbar";
 import Newnote from "./components/Newnote";
+import EditNote from "./components/EditNote";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route path="/addnewnote" component={Newnote} exact />
               <Route path="/addnewnote" component={Login} exact />
               <Route path="/addnewnote" component={Regester} exact />
+              <Route path="/edit/:id" component={EditNote} exact />
             </Switch>
           </div>
         </>

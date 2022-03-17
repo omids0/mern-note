@@ -11,7 +11,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div>
-        <Link to="addnewnote">
+        <Link to="/addnewnote">
           <button className="navbar-add-new">Add New</button>
         </Link>
       </div>

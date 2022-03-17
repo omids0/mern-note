@@ -1,10 +1,18 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { getAllNotesReducer } from "./reducers/notesReducers";
+import {
+  findNoteReducer,
+  getAllNotesReducer,
+  removeNoteReducer,
+  updateNoteReducer,
+} from "./reducers/notesReducers";
 
 const finalReducer = combineReducers({
   getAllNotesReducer: getAllNotesReducer,
+  removeNoteReducer: removeNoteReducer,
+  findNoteReducer: findNoteReducer,
+  updateNoteReducer: updateNoteReducer,
 });
 
 const initialState = {};

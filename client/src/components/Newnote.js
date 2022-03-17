@@ -14,6 +14,7 @@ export default function Newnote() {
     };
     if (body) {
       dispatch(addNewNoteAction(note));
+      window.location.href = '/'
     } else {
       alert("Body is empty");
     }
@@ -44,7 +45,6 @@ export default function Newnote() {
         </label>
         <div className="form-group-btn">
           <div>
-            <button className="btn remove-btn">Remove</button>
           </div>
           <div>
             <button className="btn save-btn" onClick={saveNote}>Save</button>
